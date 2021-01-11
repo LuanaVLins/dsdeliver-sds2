@@ -1,3 +1,4 @@
+import { type } from "os"
 
 export type Product = {
     id: number;
@@ -7,8 +8,16 @@ export type Product = {
     imageUri: string;
 }
 
-export type OrderLocationdata = {
-    address: number;
+export type OrderLocationData = {
     latitude: number;
-    longitude: string;
+    longitude: number;
+    address: string;
 }
+
+type ProductId = {
+    id: number;
+}
+
+export type OrderPayload = {
+    products: ProductId[];
+} & OrderLocationData;
